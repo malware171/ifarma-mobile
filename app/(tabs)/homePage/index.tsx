@@ -16,7 +16,6 @@ export default function index() {
          pontuation={4.8}
          description='Vulputate tincidunt convallis pulvinar egestas consequat, aliquam lectus nibh. Leo purus nisi, nibh condimentum aliquam eu quis. Ultrices arcu pharetra.'
       />
-
     </View>
   )
 }

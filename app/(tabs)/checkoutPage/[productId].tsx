@@ -13,13 +13,13 @@ export default function ProductId() {
   return (
    <View style={styles.container}>
       <HeaderHomePage/>
-      <CardCheckout 
-         imgUrl= {imgUrl}
-         pharmacyName={pharmacyName}
-         price={price}
-         productName={productName}
-         pontuation={pontuation}
-         description = {description}
+      <CardCheckout
+         imgUrl= {imgUrl as string}
+         pharmacyName={pharmacyName as string}
+         price={Number(price)}
+         productName={productName as string}
+         pontuation={Number(pontuation) }
+         description = {description as string} 
       />
    </View>
   )
