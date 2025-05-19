@@ -10,17 +10,6 @@ export default function ProductId() {
  const { imgUrl, productName, price, pharmacyName} = useLocalSearchParams();
 
   return (
-   /* <View style={styles.container}>
-      <Image source={ { uri: imgUrl}} style={styles.image}/>
-      <View style = {styles.productInfo}>
-         <Text style={styles.title}>{productName}</Text>
-         <Text style={styles.price}>R${price}</Text>
-         <View style={styles.containerpharmacyName}>
-            <EvilIcons name="location" size={18} color="#666666"  />
-            <Text style={styles.pharmacyName}>{pharmacyName}</Text>
-         </View>
-      </View>
-   </View> */
    <View style={styles.container}>
       <HeaderHomePage/>
       <CardCheckout 

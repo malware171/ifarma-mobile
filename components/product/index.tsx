@@ -33,8 +33,6 @@ export default function Product({ imgUrl, productName, price, pharmacyName}: Pro
             <EvilIcons name="location" size={18} color="#666666"  />
             <Text style={styles.pharmacyName}>{pharmacyName}</Text>
          </View>
-      
-         <Button title="Adicionar ao Carrinho" route="/checkout"></Button>
       </View>
    </Link>
   ) 
