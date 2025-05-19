@@ -36,16 +36,22 @@ export default function CardCheckout({ imgUrl, productName, price, pharmacyName}
       <Text style={styles.distaceText}>2.5 Km - 5 Mins</Text>
       <View style={styles.quantContainer}>
          <Text style={styles.productName}>{productName}</Text>
+
          <View style={styles.buttonAddProdutsContainer}>
             <TouchableOpacity onPress={removeProduct}>
-               <Ionicons name="remove-circle" size={20} color="black" />
+               <Ionicons name="remove-circle" size={20} color="#2B2B2B" />
             </TouchableOpacity>
             <Text>{amout}</Text>
             <TouchableOpacity onPress={addProduct}>
-               <FontAwesome name="plus-square-o" size={20} color="black" />
+               <FontAwesome name="plus-square-o" size={20} color="#2B2B2B" />
             </TouchableOpacity>
          </View>
+
       </View>
+
+      <TouchableOpacity>
+         <Text> TESTE </Text>
+      </TouchableOpacity>
    </View>
   )
 }
