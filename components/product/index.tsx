@@ -4,6 +4,7 @@ import EvilIcons from '@expo/vector-icons/EvilIcons';
 import { Link } from "expo-router";
 
 interface ProductProps {
+  id: number
   imgUrl: string
   productName: string
   price: number
@@ -12,18 +13,19 @@ interface ProductProps {
   description: string
 }
 
-export default function Product({ imgUrl, productName, price, pharmacyName, pontuation, description}: ProductProps) {
+export default function Product({ id, imgUrl, productName, price, pharmacyName, pontuation, description}: ProductProps) {
   return(
     <Link style={styles.container}
     href={{
         pathname: "/(tabs)/checkoutPage/[productId]",
         params: {
-          imgUrl: imgUrl,
-          productName: productName,
-          price: price,
-          pharmacyName: pharmacyName,
-          pontuation: pontuation,
-          description: description
+          productId: id,
+          imgUrl,
+          productName,
+          price,
+          pharmacyName,
+          pontuation,
+          description
         },
       }}
     >
@@ -71,9 +73,10 @@ const styles = StyleSheet.create({
   },
   image: {
     width: "100%", 
-    height: 150,
+    height: 250,
     marginRight: 16,
-    borderRadius: 10
+    borderRadius: 10,
+    alignContent: "center",
   },
   containerpharmacyName: {
    flexDirection: "row"

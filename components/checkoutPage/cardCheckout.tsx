@@ -23,7 +23,6 @@ export default function CardCheckout({ imgUrl, productName, price, pharmacyName,
    const [amout, setAmount] = useState(1)
    const [newPrice, setNewPrice] = useState(price)
    const addProduct = () => {
-
       setAmount(amout + 1)
    }
 

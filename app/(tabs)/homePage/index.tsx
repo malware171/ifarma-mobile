@@ -8,6 +8,7 @@ export default function index() {
     <View style = {styles.container}>
       <HeaderHomePage/>
       <Product
+         id={1}
          imgUrl='https://drogariavenancio.vtexassets.com/arquivos/ids/1060740-1200-auto?v=638279844533400000&width=1200&height=auto&aspect=true'
          pharmacyName='Rede Raia'
          price={13.99}
