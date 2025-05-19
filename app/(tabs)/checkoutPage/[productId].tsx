@@ -2,21 +2,24 @@ import { View, Text, StyleSheet, Image } from 'react-native'
 import React from 'react'
 import EvilIcons from '@expo/vector-icons/EvilIcons';
 import { useLocalSearchParams } from 'expo-router'
-import CardCheckout from '@/components/checkoutPage/card';
+import CardCheckout from '@/components/checkoutPage/cardCheckout';
 import HeaderHomePage from '@/components/headerHomePage';
 
 
+
 export default function ProductId() {
- const { imgUrl, productName, price, pharmacyName} = useLocalSearchParams();
+ const { imgUrl, productName, price, pharmacyName, pontuation, description} = useLocalSearchParams();
 
   return (
    <View style={styles.container}>
       <HeaderHomePage/>
       <CardCheckout 
-         imgUrl= "https://drogariavenancio.vtexassets.com/arquivos/ids/1060740-1200-auto?v=638279844533400000&width=1200&height=auto&aspect=true"
+         imgUrl= {imgUrl}
          pharmacyName={pharmacyName}
          price={price}
          productName={productName}
+         pontuation={pontuation}
+         description = {description}
       />
    </View>
   )

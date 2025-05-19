@@ -8,9 +8,11 @@ interface ProductProps {
   productName: string
   price: number
   pharmacyName: string
+  pontuation: number
+  description: string
 }
 
-export default function Product({ imgUrl, productName, price, pharmacyName}: ProductProps) {
+export default function Product({ imgUrl, productName, price, pharmacyName, pontuation, description}: ProductProps) {
   return(
     <Link style={styles.container}
     href={{
@@ -19,7 +21,9 @@ export default function Product({ imgUrl, productName, price, pharmacyName}: Pro
           imgUrl: imgUrl,
           productName: productName,
           price: price,
-          pharmacyName: pharmacyName
+          pharmacyName: pharmacyName,
+          pontuation: pontuation,
+          description: description
         },
       }}
     >
