@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     padding: 16,
     borderRadius: 12,
-    width: "70%",
+    width: "100%",
     marginBottom: 10
   },
   productInfo: {

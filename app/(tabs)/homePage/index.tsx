@@ -1,27 +1,44 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, FlatList } from 'react-native'
 import React from 'react'
 import Product from '@/components/product'
 import HeaderHomePage from '@/components/headerHomePage'
 
+import products from '@/assets/database/products'
+import { SafeAreaView } from 'react-native-safe-area-context'
+
 export default function index() {
   return (
-    <View style = {styles.container}>
+    <SafeAreaView style = {styles.container}>
       <HeaderHomePage/>
-      <Product
-         id={1}
-         imgUrl='https://drogariavenancio.vtexassets.com/arquivos/ids/1060740-1200-auto?v=638279844533400000&width=1200&height=auto&aspect=true'
-         pharmacyName='Rede Raia'
-         price={13.99}
-         productName='Dipirona'
-         pontuation={4.8}
-         description='Vulputate tincidunt convallis pulvinar egestas consequat, aliquam lectus nibh. Leo purus nisi, nibh condimentum aliquam eu quis. Ultrices arcu pharetra.'
+      
+     <FlatList
+      contentContainerStyle={{
+        paddingHorizontal: 50,
+        paddingBottom: 20,
+      }}
+      data={products}
+      renderItem={({ item }) => (
+        <Product
+          id={item.id}
+          imgUrl={item.imgUrl}
+          pharmacyName={item.pharmacyName}
+          price={item.price}
+          productName={item.productName}
+          pontuation={item.pontuation}
+          description={item.description}
+        />
+      )}
+      keyExtractor={(item) => item.id.toString()}
       />
-    </View>
+
+    </SafeAreaView>
   )
 }
 
 const styles = StyleSheet.create({
    container: {
-      alignItems: "center"
-   }
+      alignContent: 'center',
+      flex: 1,
+
+   },
 })
