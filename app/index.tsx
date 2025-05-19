@@ -14,7 +14,7 @@ export default function index() {
          </LoginTitle>
          <Input placeholder='username'/>
          <Input placeholder='password'/>
-         <Button title='Log In' route='(tabs)/homePage'></Button>
+         <Button title='Log In' route='/(tabs)/homePage'></Button>
       </View>
     </View>
   )

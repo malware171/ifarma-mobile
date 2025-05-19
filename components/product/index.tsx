@@ -7,25 +7,36 @@ interface ProductProps {
   imgUrl: string
   productName: string
   price: number
-  localization: string
+  pharmacyName: string
 }
 
-export default function Product({ imgUrl, productName, price, localization}: ProductProps) {
+export default function Product({ imgUrl, productName, price, pharmacyName}: ProductProps) {
   return(
-    <View style={styles.container}>
+    <Link style={styles.container}
+    href={{
+        pathname: "/(tabs)/checkoutPage/[productId]",
+        params: {
+          imgUrl: imgUrl,
+          productName: productName,
+          price: price,
+          pharmacyName: pharmacyName
+        },
+      }}
+    >
+
       
       <Image source={{ uri: imgUrl }} style={styles.image}/>
       <View style = {styles.productInfo}>
          <Text style={styles.title}>{productName}</Text>
          <Text style={styles.price}>R${price}</Text>
-         <View style={styles.containerLocalization}>
+         <View style={styles.containerpharmacyName}>
             <EvilIcons name="location" size={18} color="#666666"  />
-            <Text style={styles.localization}>{localization}</Text>
+            <Text style={styles.pharmacyName}>{pharmacyName}</Text>
          </View>
       
          <Button title="Adicionar ao Carrinho" route="/checkout"></Button>
       </View>
-   </View>
+   </Link>
   ) 
 }
 
@@ -52,7 +63,7 @@ const styles = StyleSheet.create({
   produtcName: {
     color: "#B3B3B3",
   },
-  localization: {
+  pharmacyName: {
    fontSize: 12,
    color: "#999999",
   },
@@ -62,7 +73,7 @@ const styles = StyleSheet.create({
     marginRight: 16,
     borderRadius: 10
   },
-  containerLocalization: {
+  containerpharmacyName: {
    flexDirection: "row"
   }
   

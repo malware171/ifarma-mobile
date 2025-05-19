@@ -15,7 +15,7 @@ export default function index() {
          <Input placeholder='username'/>
          <Input placeholder='password'/>
          <Input placeholder='confirm password'/>
-         <Button title='Log In'></Button>
+         
       </View>
     </View>
   )
