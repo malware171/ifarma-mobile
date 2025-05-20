@@ -1,7 +1,6 @@
 import { View, Text, StyleSheet, FlatList } from 'react-native'
 import React from 'react'
 import Product from '@/components/product'
-import HeaderHomePage from '@/components/headerHomePage'
 
 import products from '@/assets/database/products'
 import { SafeAreaView } from 'react-native-safe-area-context'
@@ -9,7 +8,6 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 export default function index() {
   return (
     <SafeAreaView style = {styles.container}>
-      <HeaderHomePage/>
       
      <FlatList
       contentContainerStyle={{

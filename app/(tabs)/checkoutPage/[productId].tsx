@@ -12,7 +12,6 @@ export default function ProductId() {
 
   return (
    <View style={styles.container}>
-      <HeaderHomePage/>
       <CardCheckout
          imgUrl= {imgUrl as string}
          pharmacyName={pharmacyName as string}

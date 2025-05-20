@@ -2,8 +2,7 @@ import { View, TouchableOpacity, StyleSheet, Text} from 'react-native'
 import React from 'react'
 import { useRoute } from '@react-navigation/native'
 import { router } from 'expo-router'
-
-interface ButtonProps {
+interface ButtonProps{
   title: string
   route: string
 }
