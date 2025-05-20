@@ -8,7 +8,7 @@ import { useRoute } from '@react-navigation/native'
 
 export default function index() {
 
-   const router = useRoute()
+  const router = useRoute()
   return (
     <View style = {styles.container}>
       <View style = {styles.backgroundContainer}>

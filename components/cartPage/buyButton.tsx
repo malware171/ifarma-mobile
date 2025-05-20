@@ -1,15 +1,12 @@
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
-import React, { useState } from 'react'
+import React from 'react'
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
-import { useRouter } from 'expo-router';
 
 interface BuyButtonProps {
    price: number
 }
 
 export default function BuyButton({price}: BuyButtonProps) {
-   const router = useRouter()
-
   return (
    <View style={styles.container}>
       

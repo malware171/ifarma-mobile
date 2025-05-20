@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, FlatList } from 'react-native'
+import { StyleSheet, FlatList } from 'react-native'
 import React from 'react'
 import Product from '@/components/product'
 
@@ -37,6 +37,5 @@ const styles = StyleSheet.create({
    container: {
       alignContent: 'center',
       flex: 1,
-
    },
 })

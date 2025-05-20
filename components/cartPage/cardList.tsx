@@ -1,8 +1,9 @@
-import { View, Text, ImageBackground, Image, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import Ionicons from '@expo/vector-icons/Ionicons';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
+import colors from '@/constants/color';
 
 interface CardListProps {
    id: string
@@ -17,20 +18,20 @@ interface CardListProps {
 
 export default function CardList({id, imgUrl, pharmacyName, pontuation, productName, description, price, amount}: CardListProps) {
   
-  const [amout, setAmount] = useState(1)
-     const [newPrice, setNewPrice] = useState(price)
-  
-     const addProduct = () => {
-        setAmount(amout + 1)
-     }
-  
-     const removeProduct = () => {
-        if(amout <= 0) {
-           setAmount(0)
-        } else {
-           setAmount(amout - 1)
-        }
-     }
+   const [amout, setAmount] = useState(Number(amount))
+   const [newPrice, setNewPrice] = useState(price)
+
+   const addProduct = () => {
+      setAmount(amout + 1)
+   }
+
+   const removeProduct = () => {
+      if(amout <= 0) {
+         setAmount(0)
+      } else {
+         setAmount(amout - 1)
+      }
+   }
   
    return (
     <View style={styles.backGroundContainer}>
@@ -67,7 +68,7 @@ export default function CardList({id, imgUrl, pharmacyName, pontuation, productN
 const styles = StyleSheet.create({
    backGroundContainer: {
       margin: 20,
-      backgroundColor: "white",
+      backgroundColor: colors.backgroud,
       borderRadius: 10,
       flexDirection: 'row',
       alignContent: 'center',

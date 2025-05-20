@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: "white",
-     fontSize: 12,
+    fontSize: 12,
     fontWeight: "500",
     fontFamily: "inter"
   }
