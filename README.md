@@ -51,7 +51,7 @@ $ yarn start --clear
 ```
 $ w
  ```
-## Pagina Home
+## Página Home
 
 ![Captura de Tela 2025-05-20 às 19 20 02](https://github.com/user-attachments/assets/d3e4ce1f-fa5c-453a-9136-c5be63100c9a)
 
