@@ -4,6 +4,7 @@ import { useLocalSearchParams } from 'expo-router'
 import cart from '@/assets/database/cart'
 import Product from '@/components/product'
 import CardList from '@/components/cartPage/cardList'
+import BuyButton from '@/components/cartPage/buyButton'
 
 export default function cartPage() {
   const {id, imgUrl, pharmacyName, pontuation, productName, description, price, amount} = useLocalSearchParams()
@@ -21,6 +22,7 @@ export default function cartPage() {
         productName={productName as string}
         price={price as string}
       />
+      <BuyButton price={Number(price)}/>
     </View>
   )
 }
@@ -28,6 +30,6 @@ export default function cartPage() {
 const style = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 30
+    justifyContent: 'space-between',
   }
 })

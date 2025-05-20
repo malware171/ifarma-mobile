@@ -11,9 +11,8 @@ export default function _layout() {
     >
       <Tabs.Screen name='index' options={{title: "Produtos", headerShown: true}}/>
       <Tabs.Screen name='homePage/index' options={{title: "Home", headerShown: true}}/>
-      <Tabs.Screen name='checkoutPage/index' options={{title: "Carrinho", headerShown: true}}/>
-      <Tabs.Screen name='checkoutPage/[productId]' options={{  headerShown: true}}/>
-      <Tabs.Screen name='cartPage/index' options={{  headerShown: true}}/>
+      <Tabs.Screen name='checkoutPage/[productId]' options={{ title: "Detalhes do produto", headerShown: true, tabBarButton: () => null,}}/>
+      <Tabs.Screen name='cartPage/index' options={{ title: "Carrinho", headerShown: true}}/>
     </Tabs>
   )
 }
