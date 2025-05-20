@@ -1,9 +1,10 @@
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Ionicons from '@expo/vector-icons/Ionicons';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import colors from '@/constants/color';
+import { useActionSheet } from '@expo/react-native-action-sheet';
 
 interface CardListProps {
    id: string
@@ -12,14 +13,22 @@ interface CardListProps {
    pontuation: string
    productName: string
    description:string
-   price: string
-   amount: string
+   price: number
+   amount: number
 }
 
 export default function CardList({id, imgUrl, pharmacyName, pontuation, productName, description, price, amount}: CardListProps) {
-  
+   
+   const { showActionSheetWithOptions } = useActionSheet();
+
+   const options = ["Apagar", "Cancelar"];
+   const destructiveButtonIndex = 0;
+   const cancelButtonIndex = 1;
+
+   const numberPrice = Number(price)
    const [amout, setAmount] = useState(Number(amount))
-   const [newPrice, setNewPrice] = useState(price)
+
+   const [newPrice, setNewPrice] = useState(numberPrice)
 
    const addProduct = () => {
       setAmount(amout + 1)
@@ -32,6 +41,23 @@ export default function CardList({id, imgUrl, pharmacyName, pontuation, productN
          setAmount(amout - 1)
       }
    }
+
+   useEffect(() => {
+      setNewPrice(Number(amout) * numberPrice)
+   }, [amout])
+
+   const handleOpen = () => {
+      showActionSheetWithOptions(
+         {
+            options,
+            destructiveButtonIndex,
+            cancelButtonIndex
+         },
+         (buttonIndex) => {
+            console.log("Selected: ", buttonIndex);
+         }
+      )
+   }
   
    return (
     <View style={styles.backGroundContainer}>
@@ -39,7 +65,7 @@ export default function CardList({id, imgUrl, pharmacyName, pontuation, productN
       <View style ={styles.leftContainer}>
          <View style = {styles.topContainer}>
             <Text>{productName}</Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={handleOpen}>
                <FontAwesome5 name="trash" size={16} color="#F55A51" />
             </TouchableOpacity>
          </View>
@@ -77,7 +103,7 @@ const styles = StyleSheet.create({
    image : {
       width: 100,
       height: 100,
-      borderRadius: 10
+      borderRadius: 10,
    }, 
    buttonAddProdutsContainer: {
       flexDirection: "row",

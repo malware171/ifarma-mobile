@@ -38,6 +38,10 @@ $ corepack enable
 $ export PATH="$(yarn global bin):$PATH"
 $ yarn -v
 ```
+## Instalar pacote do ActionSheet
+````
+yarn add @expo/react-native-action-sheet
+````
 
 ## Inicializar o projeto
  ```

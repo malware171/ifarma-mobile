@@ -36,7 +36,6 @@ export default function CardCheckout({ id, imgUrl, productName, price, pharmacyN
          setAmount(amout - 1)
       }
    }
-   console.log('imgUrl:', imgUrl)
 
    useEffect(() => {
       setNewPrice(amout * price)
@@ -81,7 +80,7 @@ export default function CardCheckout({ id, imgUrl, productName, price, pharmacyN
             productName={productName}
             description={description}
             price={newPrice}
-            amount={amout}
+            amount= {amout}
          />
          
       </View>
@@ -92,11 +91,11 @@ const styles = StyleSheet.create({
    principalContainer: {
       alignItems: 'center',
       justifyContent: 'space-between',
-      flex: 1
+      flex: 1,
    },
    container: {
       width: "80%",
-      gap: 14
+      gap: 20
    },
    image: {
       width: "100%",

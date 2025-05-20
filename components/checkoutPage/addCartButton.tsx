@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import { useRouter } from 'expo-router';
 import fonts from '@/constants/fonts';
+import colors from '@/constants/color';
 
 interface AddCartButtonProps {
    price: number
@@ -40,7 +41,7 @@ export default function AddCartButton({price, id, imgUrl, productName, pharmacyN
          id: id,
          imgUrl: imgUrl,
          productName: productName,
-         price: price.toString(),
+         price: price,
          pharmacyName: pharmacyName,
          pontuation: pontuation.toString(),
          description: description,
@@ -72,7 +73,7 @@ export default function AddCartButton({price, id, imgUrl, productName, pharmacyN
 const styles = StyleSheet.create({
    container: {
       alignItems: 'center',
-      backgroundColor: "white",
+      backgroundColor: colors.backgroud,
       width: "100%",
       borderTopLeftRadius: 20,
       borderTopRightRadius: 20,
