@@ -4,8 +4,11 @@ import LoginTitle from '@/components/authenticationPage/title'
 import Button from '@/components/authenticationPage/button'
 import Input from '@/components/authenticationPage/input'
 import { Link } from 'expo-router'
+import { useRoute } from '@react-navigation/native'
 
 export default function index() {
+
+   const router = useRoute()
   return (
     <View style = {styles.container}>
       <View style = {styles.backgroundContainer}>
@@ -14,7 +17,7 @@ export default function index() {
          </LoginTitle>
          <Input placeholder='username'/>
          <Input placeholder='password'/>
-         <Button title='Log In' route='/(tabs)/homePage'></Button>
+         <Button title='Log In' route='(tabs)/homePage'></Button>
       </View>
     </View>
   )

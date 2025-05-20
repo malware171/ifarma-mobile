@@ -7,8 +7,6 @@ interface AddCartButtonProps {
 }
 
 export default function AddCartButton({price}: AddCartButtonProps) {
-
-   
   return (
    <View style={styles.container}>
       

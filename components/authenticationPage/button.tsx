@@ -10,11 +10,11 @@ interface ButtonProps {
 
 export default function Button({title, route}: ButtonProps) {
 
-  const onClick = () => {
+  const handleLogin = () => {
     router.navigate(route as any)
   }
   return (
-    <TouchableOpacity style = {styles.buttonContainer} onPress={onClick}>
+    <TouchableOpacity style = {styles.buttonContainer} onPress={handleLogin}>
       <Text style={styles.title}>
         {title}
       </Text>

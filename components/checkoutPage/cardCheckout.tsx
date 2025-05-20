@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import EvilIcons from '@expo/vector-icons/EvilIcons';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
@@ -22,6 +22,7 @@ export default function CardCheckout({ imgUrl, productName, price, pharmacyName,
   
    const [amout, setAmount] = useState(1)
    const [newPrice, setNewPrice] = useState(price)
+
    const addProduct = () => {
       setAmount(amout + 1)
    }
@@ -33,6 +34,7 @@ export default function CardCheckout({ imgUrl, productName, price, pharmacyName,
          setAmount(amout - 1)
       }
    }
+   console.log('imgUrl:', imgUrl)
 
    useEffect(() => {
       setNewPrice(amout * price)
@@ -40,7 +42,7 @@ export default function CardCheckout({ imgUrl, productName, price, pharmacyName,
   
    return (
       <View style={styles.principalContainer}>
-         <View style={styles.container}>
+         <ScrollView style={styles.container}>
             <View style={styles.imageContainer}>
                <Image style={styles.image} source={{uri: imgUrl}} ></Image>
             </View>
@@ -67,7 +69,7 @@ export default function CardCheckout({ imgUrl, productName, price, pharmacyName,
             </View>
             <ProductDescription description={description}/>
 
-         </View>
+         </ScrollView>
 
          <AddCartButton price={newPrice}/>
          

@@ -1,7 +1,7 @@
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import Button from "../authenticationPage/button";
 import EvilIcons from '@expo/vector-icons/EvilIcons';
-import { Link } from "expo-router";
+import { Link, useRouter } from "expo-router";
 
 interface ProductProps {
   id: number
@@ -14,23 +14,27 @@ interface ProductProps {
 }
 
 export default function Product({ id, imgUrl, productName, price, pharmacyName, pontuation, description}: ProductProps) {
+  
+  const router = useRouter()
+
   return(
-    <Link style={styles.container}
-    href={{
-        pathname: "/(tabs)/checkoutPage/[productId]",
-        params: {
-          productId: id,
-          imgUrl,
-          productName,
-          price,
-          pharmacyName,
-          pontuation,
-          description
-        },
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => {
+        router.push({
+          pathname: "/(tabs)/checkoutPage/[productId]",
+          params: {
+            productId: id,
+            imgUrl: encodeURIComponent(imgUrl),
+            productName,
+            price,
+            pharmacyName,
+            pontuation,
+            description
+          },
+        });
       }}
     >
-
-      
       <Image source={{ uri: imgUrl }} style={styles.image}/>
       <View style = {styles.productInfo}>
          <Text style={styles.title}>{productName}</Text>
@@ -40,7 +44,7 @@ export default function Product({ id, imgUrl, productName, price, pharmacyName, 
             <Text style={styles.pharmacyName}>{pharmacyName}</Text>
          </View>
       </View>
-   </Link>
+   </TouchableOpacity>
   ) 
 }
 
