@@ -51,3 +51,23 @@ $ yarn start --clear
 ```
 $ w
  ```
+## Pagina Home
+
+![Captura de Tela 2025-05-20 às 19 20 02](https://github.com/user-attachments/assets/d3e4ce1f-fa5c-453a-9136-c5be63100c9a)
+
+## Visualiar o Produto
+![Captura de Tela 2025-05-20 às 19 20 20](https://github.com/user-attachments/assets/8f40bbc6-46b7-4ec4-8bac-008a11c2807d)
+
+
+## Carrinho
+
+![Captura de Tela 2025-05-20 às 19 20 28](https://github.com/user-attachments/assets/2acbf832-4ecd-4d70-9ca2-5889c9290643)
+
+
+## ActionSheet
+
+![Captura de Tela 2025-05-20 às 19 20 34](https://github.com/user-attachments/assets/f2286f99-79f8-42cc-bee8-687375e7bc5c)
+
+
+
+
