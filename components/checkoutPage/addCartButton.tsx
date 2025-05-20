@@ -2,6 +2,7 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import React, { useState } from 'react'
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import { useRouter } from 'expo-router';
+import fonts from '@/constants/fonts';
 
 interface AddCartButtonProps {
    price: number
@@ -95,10 +96,10 @@ const styles = StyleSheet.create({
    textButton: {
       color: "white",
       fontWeight: '600',
-      fontSize: 20,
+      fontSize: fonts.title.bg,
    },
    price: {
-      fontSize: 28,
+      fontSize: fonts.title.eg,
       fontWeight: '700',
       fontFamily: "Inter"
    }

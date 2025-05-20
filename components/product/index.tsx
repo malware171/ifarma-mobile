@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import Button from "../authenticationPage/button";
 import EvilIcons from '@expo/vector-icons/EvilIcons';
 import { Link, useRouter } from "expo-router";
+import colors from "@/constants/color";
 
 interface ProductProps {
   id: number
@@ -40,7 +41,7 @@ export default function Product({ id, imgUrl, productName, price, pharmacyName, 
          <Text style={styles.title}>{productName}</Text>
          <Text style={styles.price}>R${price}</Text>
          <View style={styles.containerpharmacyName}>
-            <EvilIcons name="location" size={18} color="#666666"  />
+            <EvilIcons name="location" size={18} color={colors.secondColor}  />
             <Text style={styles.pharmacyName}>{pharmacyName}</Text>
          </View>
       </View>
@@ -50,7 +51,7 @@ export default function Product({ id, imgUrl, productName, price, pharmacyName, 
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#FFFFFF",
+    backgroundColor: colors.backgroud,
     padding: 16,
     borderRadius: 12,
     width: "100%",
@@ -61,7 +62,7 @@ const styles = StyleSheet.create({
     gap: 5
   },
   title:{
-    color: "#666666",
+    color: colors.secondColor,
     fontSize: 14,
   },
   price: {
@@ -85,6 +86,4 @@ const styles = StyleSheet.create({
   containerpharmacyName: {
    flexDirection: "row"
   }
-  
-  
 });

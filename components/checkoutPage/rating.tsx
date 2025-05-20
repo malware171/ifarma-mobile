@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
+import colors from '@/constants/color'
 
 interface RatingProps{
    pontuation: number
@@ -14,7 +15,7 @@ export default function Rating({pontuation}: RatingProps) {
 
 const styles = StyleSheet.create({
    text: {
-      color: "#5E5E5E",
+      color: colors.tirdColor,
       fontSize: 16,
       fontWeight: '600'
    }

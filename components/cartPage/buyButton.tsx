@@ -1,6 +1,8 @@
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import React from 'react'
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
+import colors from '@/constants/color';
+import fonts from '@/constants/fonts';
 
 interface BuyButtonProps {
    price: number
@@ -27,7 +29,7 @@ export default function BuyButton({price}: BuyButtonProps) {
 const styles = StyleSheet.create({
    container: {
       alignItems: 'center',
-      backgroundColor: "white",
+      backgroundColor: colors.backgroud,
       width: "100%",
       borderTopLeftRadius: 20,
       borderTopRightRadius: 20,
@@ -51,10 +53,10 @@ const styles = StyleSheet.create({
    textButton: {
       color: "white",
       fontWeight: '600',
-      fontSize: 20,
+      fontSize: fonts.title.bg,
    },
    price: {
-      fontSize: 28,
+      fontSize: fonts.title.eg,
       fontWeight: '700',
       fontFamily: "Inter"
    }

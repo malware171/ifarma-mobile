@@ -5,9 +5,10 @@ import Button from '@/components/authenticationPage/button'
 import Input from '@/components/authenticationPage/input'
 import { Link } from 'expo-router'
 import { useRoute } from '@react-navigation/native'
+import users from '@/assets/database/user'
 
 export default function index() {
-
+   
   const router = useRoute()
   return (
     <View style = {styles.container}>

@@ -7,6 +7,7 @@ import Rating from './rating';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import ProductDescription from './productDescription';
 import AddCartButton from './addCartButton';
+import colors from '@/constants/color';
 
 
 interface CardCheckoutProps {
@@ -48,17 +49,17 @@ export default function CardCheckout({ id, imgUrl, productName, price, pharmacyN
                <Image style={styles.image} source={{uri: imgUrl}} ></Image>
             </View>
             <Text style={styles.distaceText}> 
-               <EvilIcons name="location" size={18} color="#666666"  /> {pharmacyName} 2.5 Km - 5 Minutos</Text>
+               <EvilIcons name="location" size={18} color={colors.secondColor}  /> {pharmacyName} 2.5 Km - 5 Minutos</Text>
             <View style={styles.quantContainer}>
                <Text style={styles.productName}>{productName}</Text>
 
                <View style={styles.buttonAddProdutsContainer}>
                   <TouchableOpacity onPress={removeProduct}>
-                     <Ionicons name="remove-circle" size={20} color="#2B2B2B" />
+                     <Ionicons name="remove-circle" size={20} color={colors.icons.plus_less} />
                   </TouchableOpacity>
                   <Text>{amout}</Text>
                   <TouchableOpacity onPress={addProduct}>
-                     <FontAwesome name="plus-square-o" size={20} color="#2B2B2B" />
+                     <FontAwesome name="plus-square-o" size={20} color={colors.icons.plus_less} />
                   </TouchableOpacity>
                </View>
             </View>

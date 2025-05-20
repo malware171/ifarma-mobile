@@ -7,13 +7,11 @@ interface InputProps{
 }
 
 export default function Input({placeholder}: InputProps) {
-
   const [isFocused, setIsFocused] = useState(false)
   return (
     <TextInput
     style = {[style.container, isFocused && style.inputFocused ]}
     placeholder= {placeholder}
-
     onFocus={() => setIsFocused(true)}
     onBlur={() => setIsFocused(false)}
     />  

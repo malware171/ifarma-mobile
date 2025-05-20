@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
+import colors from '@/constants/color'
 
 interface ProductDescriptionProps{
    description: string
@@ -13,6 +14,6 @@ export default function ProductDescription({description}: ProductDescriptionProp
 const styles = StyleSheet.create({
    text: {
       fontSize: 16,
-      color: "#5E5E5E"
+      color: colors.tirdColor
    }
 })
