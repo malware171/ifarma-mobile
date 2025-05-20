@@ -10,6 +10,7 @@ import AddCartButton from './addCartButton';
 
 
 interface CardCheckoutProps {
+   id: string
    imgUrl: any
    productName: string
    price: number
@@ -18,7 +19,7 @@ interface CardCheckoutProps {
    description: string
 }
 
-export default function CardCheckout({ imgUrl, productName, price, pharmacyName, pontuation, description}: CardCheckoutProps) {
+export default function CardCheckout({ id, imgUrl, productName, price, pharmacyName, pontuation, description}: CardCheckoutProps) {
   
    const [amout, setAmount] = useState(1)
    const [newPrice, setNewPrice] = useState(price)
@@ -71,7 +72,16 @@ export default function CardCheckout({ imgUrl, productName, price, pharmacyName,
 
          </ScrollView>
 
-         <AddCartButton price={newPrice}/>
+         <AddCartButton 
+            id={id}
+            imgUrl={imgUrl}
+            pharmacyName={pharmacyName}
+            pontuation={pontuation}
+            productName={productName}
+            description={description}
+            price={newPrice}
+            amount={amout}
+         />
          
       </View>
   )

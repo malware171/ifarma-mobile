@@ -1,19 +1,63 @@
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
+import { useRouter } from 'expo-router';
 
 interface AddCartButtonProps {
    price: number
+   id: string,
+   imgUrl: string,
+   productName: string,
+   pharmacyName: string,
+   pontuation: number,
+   description: string
+   amount: number
 }
 
-export default function AddCartButton({price}: AddCartButtonProps) {
+export default function AddCartButton({price, id, imgUrl, productName, pharmacyName, pontuation, description, amount}: AddCartButtonProps) {
+   const router = useRouter()
+
+   //const [cart, setCart] = useState([])
+
+   //const handleCheckout = () => {
+   //   const product = {
+   //      id: id,
+   //      imgUrl: imgUrl,
+   //      productName: productName,
+   //      price: price,
+   //      pharmacyName: pharmacyName,
+   //      pontuation: pontuation,
+   //      description: description
+   //   }
+   //   cart.push(product)
+   // }
+
+   const handleCheckout = () => {
+      router.push({
+      pathname: '/cartPage', 
+      params: {
+         id: id,
+         imgUrl: imgUrl,
+         productName: productName,
+         price: price.toString(),
+         pharmacyName: pharmacyName,
+         pontuation: pontuation.toString(),
+         description: description,
+         amount: amount
+      }
+   })}
+
+   
+
   return (
+
+   
    <View style={styles.container}>
       
       <View style={styles.containerButton}>
          <Text style={styles.price}>R${price}</Text>
 
-         <TouchableOpacity style = {styles.statusContainer}>
+         <TouchableOpacity style = {styles.statusContainer} onPress={handleCheckout}>
             <Text style={styles.textButton}>Check out</Text>
             <FontAwesome6 name="basket-shopping" size={16} color="white" />
          </TouchableOpacity>
