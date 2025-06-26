@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, Image } from 'react-native'
 import React from 'react'
 
 interface UserProfileProps{
@@ -7,7 +7,7 @@ interface UserProfileProps{
 export default function UserProfile({profileImage}: UserProfileProps) {
   return (
     <View style={style.container}>
-      <img style={style.image} src={profileImage} alt="profile Image" />
+      <Image style={style.image} source={{uri: profileImage}}/>
     </View>
   )
 }
