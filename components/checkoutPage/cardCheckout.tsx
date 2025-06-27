@@ -8,6 +8,7 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import ProductDescription from './productDescription';
 import AddCartButton from './addCartButton';
 import colors from '@/constants/color';
+import QuantitySelector from '../QuantitySelector';
 
 
 interface CardCheckoutProps {
@@ -38,7 +39,7 @@ export default function CardCheckout({ id, imgUrl, productName, price, pharmacyN
    }
 
    useEffect(() => {
-      setNewPrice(amout * price)
+      setNewPrice((amout * price))
    }, [amout])
   
    return (
@@ -51,18 +52,13 @@ export default function CardCheckout({ id, imgUrl, productName, price, pharmacyN
                <EvilIcons name="location" size={18} color={colors.secondColor}  /> {pharmacyName} 2.5 Km - 5 Minutos</Text>
             <View style={styles.quantContainer}>
                <Text style={styles.productName}>{productName}</Text>
-
-               <View style={styles.buttonAddProdutsContainer}>
-                  <TouchableOpacity onPress={removeProduct}>
-                     <Ionicons name="remove-circle" size={20} color={colors.icons.plus_less} />
-                  </TouchableOpacity>
-                  <Text>{amout}</Text>
-                  <TouchableOpacity onPress={addProduct}>
-                     <FontAwesome name="plus-square-o" size={20} color={colors.icons.plus_less} />
-                  </TouchableOpacity>
-               </View>
+               <QuantitySelector 
+                  amount={amout}
+                  onAdd={addProduct}
+                  onRemove={removeProduct}
+               />
             </View>
-
+ 
             <View style = {styles.ratingContainer}>
                <Rating pontuation={pontuation}/>
                <AntDesign name="star" size={16} color="#FFBC3F" />
@@ -117,11 +113,6 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'space-between'
-   },
-   buttonAddProdutsContainer: {
-      flexDirection: "row",
-      alignContent: 'center',
-      gap: 10
    },
    ratingContainer: {
       flexDirection: 'row',

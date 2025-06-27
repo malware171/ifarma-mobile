@@ -1,0 +1,11 @@
+appId: com.ifarma.app
+---
+- openLink: exp://127.0.0.1:8081
+- tapOn:
+    id: input-username
+- inputText: "John Bony"
+- tapOn:
+    id: input-password
+- inputText: "123ddps"
+- tapOn:
+    id: button-logIn

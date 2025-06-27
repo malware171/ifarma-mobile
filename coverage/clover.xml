@@ -1,21 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1750978883741" clover="3.2.0">
-  <project timestamp="1750978883741" name="All files">
-    <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="5" elements="16" coveredelements="16" complexity="0" loc="9" ncloc="9" packages="1" files="2" classes="2"/>
-    <file name="button.tsx" path="C:\Users\UserTemp\Desktop\programing\ifarma-mobile\components\authenticationPage\button.tsx">
-      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <line num="13" count="1" type="stmt"/>
-      <line num="14" count="1" type="stmt"/>
-      <line num="17" count="1" type="stmt"/>
-      <line num="26" count="1" type="stmt"/>
-    </file>
-    <file name="input.tsx" path="C:\Users\UserTemp\Desktop\programing\ifarma-mobile\components\authenticationPage\input.tsx">
-      <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
-      <line num="10" count="5" type="stmt"/>
-      <line num="11" count="5" type="stmt"/>
-      <line num="15" count="1" type="stmt"/>
-      <line num="16" count="1" type="stmt"/>
-      <line num="21" count="1" type="stmt"/>
-    </file>
+<coverage generated="1751045161544" clover="3.2.0">
+  <project timestamp="1751045161544" name="All files">
+    <metrics statements="18" coveredstatements="18" conditionals="6" coveredconditionals="6" methods="6" coveredmethods="6" elements="30" coveredelements="30" complexity="0" loc="18" ncloc="18" packages="3" files="4" classes="4"/>
+    <package name="components.QuantitySelector">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="index.tsx" path="C:\Users\UserTemp\Desktop\programing\ifarma-mobile\components\QuantitySelector\index.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.authenticationPage">
+      <metrics statements="15" coveredstatements="15" conditionals="6" coveredconditionals="6" methods="5" coveredmethods="5"/>
+      <file name="button.tsx" path="C:\Users\UserTemp\Desktop\programing\ifarma-mobile\components\authenticationPage\button.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+      </file>
+      <file name="input.tsx" path="C:\Users\UserTemp\Desktop\programing\ifarma-mobile\components\authenticationPage\input.tsx">
+        <metrics statements="11" coveredstatements="11" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
+        <line num="8" count="8" type="stmt"/>
+        <line num="10" count="8" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="17" count="8" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="19" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="24" count="8" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="constants">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="color.ts" path="C:\Users\UserTemp\Desktop\programing\ifarma-mobile\constants\color.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>

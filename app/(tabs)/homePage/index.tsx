@@ -17,6 +17,7 @@ export default function index() {
       data={products}
       renderItem={({ item }) => (
         <Product
+          testID={item.productName}
           id={item.id}
           imgUrl={item.imgUrl}
           pharmacyName={item.pharmacyName}

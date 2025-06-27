@@ -51,6 +51,21 @@ $ yarn start --clear
 ```
 $ w
  ```
+
+## Diferença entre teste unitario e teste E2E
+
+###  Teste Unitario
+Os testes unitarios são espeficificamentes usados para testar compomentes de forma isolada, tentantando assim as suas funcionalidades.
+
+#### Principais Objetivos:
+- Verificar a lógica interna e o comportamento de um único componente.
+- Testar interações isoladas, como garantir que a função onPress de um botão é chamada quando ele é clicado.
+
+No caso quando estamos testando, tem o comando ```yarn test --coverage``` no qual ele mostra se estamos cobrindo todos os testes necessarios para aquele componente em especifico.
+
+###  Teste E2E
+É um teste de Interface UI no qual ele valida o fluxo completo da aplicação, navegação entre telas, a comunicação com o backend e banco de dados se tiver.
+
 ## Página Home
 
 ![Captura de Tela 2025-05-20 às 19 20 02](https://github.com/user-attachments/assets/d3e4ce1f-fa5c-453a-9136-c5be63100c9a)
@@ -67,6 +82,8 @@ $ w
 ## ActionSheet
 
 ![Captura de Tela 2025-05-20 às 19 20 34](https://github.com/user-attachments/assets/f2286f99-79f8-42cc-bee8-687375e7bc5c)
+
+
 
 
 

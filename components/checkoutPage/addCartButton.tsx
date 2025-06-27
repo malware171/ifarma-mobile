@@ -57,7 +57,7 @@ export default function AddCartButton({price, id, imgUrl, productName, pharmacyN
    <View style={styles.container}>
       
       <View style={styles.containerButton}>
-         <Text style={styles.price}>R${price}</Text>
+         <Text style={styles.price}>R${price.toFixed(2)}</Text>
 
          <TouchableOpacity style = {styles.statusContainer} onPress={handleCheckout}>
             <Text style={styles.textButton}>Check out</Text>

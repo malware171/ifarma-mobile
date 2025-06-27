@@ -12,14 +12,16 @@ interface ProductProps {
   pharmacyName: string
   pontuation: number
   description: string
+  testID?: string
 }
 
-export default function Product({ id, imgUrl, productName, price, pharmacyName, pontuation, description}: ProductProps) {
+export default function Product({ id, imgUrl, productName, price, pharmacyName, pontuation, description, testID}: ProductProps) {
   
   const router = useRouter()
 
   return(
     <TouchableOpacity
+      testID={testID}
       style={styles.container}
       onPress={() => {
         router.push({
