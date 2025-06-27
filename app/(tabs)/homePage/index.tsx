@@ -2,7 +2,7 @@ import { StyleSheet, FlatList } from 'react-native'
 import React from 'react'
 import Product from '@/components/product'
 
-import products from '@/assets/database/products'
+import products from '@/database/products'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 export default function index() {

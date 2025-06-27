@@ -75,7 +75,7 @@ export default function CardCheckout({ id, imgUrl, productName, price, pharmacyN
             pontuation={pontuation}
             productName={productName}
             description={description}
-            price={newPrice}
+            price={price}
             amount= {amout}
          />
          
