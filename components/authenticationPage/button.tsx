@@ -2,6 +2,7 @@ import { View, TouchableOpacity, StyleSheet, Text} from 'react-native'
 import React from 'react'
 import { useRoute } from '@react-navigation/native'
 import { router } from 'expo-router'
+
 interface ButtonProps{
   title: string
   route: string
@@ -12,6 +13,7 @@ export default function Button({title, route}: ButtonProps) {
   const handleLogin = () => {
     router.navigate(route as any)
   }
+  
   return (
     <TouchableOpacity style = {styles.buttonContainer} onPress={handleLogin}>
       <Text style={styles.title}>
