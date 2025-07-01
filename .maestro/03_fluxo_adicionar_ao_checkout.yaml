@@ -1,0 +1,12 @@
+appId: com.ifarma.app
+name: Adicionar produto no checkout
+---
+
+- tapOn:
+    id: button-checkout
+- assertVisible: "Dipirona"
+- assertVisible:
+    id: "display-amout"
+    text: "3"
+- assertVisible: "R$41.97"
+- assertVisible: "Rede Raia"

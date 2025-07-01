@@ -1,15 +1,7 @@
 appId: com.ifarma.app
-name: Teste de Compra - Alterar Quantidade
+name: Teste de Adicionar ao Carrinho - Alterar Quantidade
 ---
-- openLink: exp://127.0.0.1:8081
-- tapOn:
-    id: input-username
-- inputText: "John Bony"
-- tapOn:
-    id: input-password
-- inputText: "123ddps"
-- tapOn:
-    id: button-logIn
+
 - tapOn:
     id: Dipirona
 - tapOn:
@@ -22,3 +14,4 @@ name: Teste de Compra - Alterar Quantidade
     id: "display-amout"
     text: "3"
 - assertVisible: "R$41.97"
+

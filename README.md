@@ -51,6 +51,9 @@ $ yarn start --clear
 ```
 $ w
  ```
+## Video de apresentação dos testes E2E
+
+[https://youtu.be/CzR5jS76XV4](https://youtu.be/CzR5jS76XV4)
 
 ## Diferença entre teste unitario e teste E2E
 
