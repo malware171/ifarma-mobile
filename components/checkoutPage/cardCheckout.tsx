@@ -9,6 +9,7 @@ import ProductDescription from './productDescription';
 import AddCartButton from './addCartButton';
 import colors from '@/constants/color';
 import QuantitySelector from '../QuantitySelector';
+import products from '@/database/products';
 
 
 interface CardCheckoutProps {
@@ -22,7 +23,17 @@ interface CardCheckoutProps {
 }
 
 export default function CardCheckout({ id, imgUrl, productName, price, pharmacyName, pontuation, description}: CardCheckoutProps) {
-  
+   
+   const product = products.find(produto => produto.id == Number(id));
+
+   if (!product) {
+    return (
+      <View>
+        <Text>Produto não encontrado!</Text>
+      </View>
+    );
+  }
+   
    const [amout, setAmount] = useState(1)
    const [newPrice, setNewPrice] = useState(price)
 
@@ -75,6 +86,7 @@ export default function CardCheckout({ id, imgUrl, productName, price, pharmacyN
             pontuation={pontuation}
             productName={productName}
             description={description}
+            newPrice={newPrice}
             price={price}
             amount= {amout}
          />

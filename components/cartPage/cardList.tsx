@@ -54,7 +54,7 @@ export default function CardList({id, imgUrl, pharmacyName, pontuation, productN
             cancelButtonIndex
          },
          (buttonIndex) => {
-            console.log("Selected: ", buttonIndex);
+            
          }
       )
    }

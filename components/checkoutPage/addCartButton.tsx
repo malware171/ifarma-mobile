@@ -7,6 +7,7 @@ import colors from '@/constants/color';
 
 interface AddCartButtonProps {
    price: number
+   newPrice: number
    id: string,
    imgUrl: string,
    productName: string,
@@ -16,7 +17,7 @@ interface AddCartButtonProps {
    amount: number
 }
 
-export default function AddCartButton({price, id, imgUrl, productName, pharmacyName, pontuation, description, amount}: AddCartButtonProps) {
+export default function AddCartButton({newPrice, price, id, imgUrl, productName, pharmacyName, pontuation, description, amount}: AddCartButtonProps) {
    const router = useRouter()
 
    const handleCheckout = () => {
@@ -39,7 +40,7 @@ export default function AddCartButton({price, id, imgUrl, productName, pharmacyN
    <View style={styles.container}>
       
       <View style={styles.containerButton}>
-         <Text style={styles.price}>R${price.toFixed(2)}</Text>
+         <Text style={styles.price}>R${newPrice.toFixed(2)}</Text>
 
          <TouchableOpacity style = {styles.statusContainer} onPress={handleCheckout}>
             <Text testID='button-checkout' style={styles.textButton}>Check out</Text>

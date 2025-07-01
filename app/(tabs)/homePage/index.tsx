@@ -16,6 +16,8 @@ export default function index() {
       }}
       data={products}
       renderItem={({ item }) => (
+        
+        
         <Product
           testID={item.productName}
           id={item.id}
@@ -25,7 +27,9 @@ export default function index() {
           productName={item.productName}
           pontuation={item.pontuation}
           description={item.description}
+          
         />
+        
       )}
       keyExtractor={(item) => item.id.toString()}
       />

@@ -18,7 +18,7 @@ interface ProductProps {
 export default function Product({ id, imgUrl, productName, price, pharmacyName, pontuation, description, testID}: ProductProps) {
   
   const router = useRouter()
-
+  
   return(
     <TouchableOpacity
       testID={testID}
