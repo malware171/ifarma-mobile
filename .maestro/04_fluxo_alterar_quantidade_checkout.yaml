@@ -1,0 +1,10 @@
+appId: com.ifarma.app
+name: Teste de alterar quantidade no checkout - Alterar Quantidade
+---
+
+- tapOn:
+    id: button-less
+- assertVisible:
+    id: "display-amout"
+    text: "2"
+- assertVisible: "R$27.98"

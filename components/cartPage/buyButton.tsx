@@ -13,14 +13,13 @@ export default function BuyButton({price}: BuyButtonProps) {
    <View style={styles.container}>
       
       <View style={styles.containerButton}>
-         <Text style={styles.price}>R${price}</Text>
+         <Text style={styles.price}>R${price.toFixed(2)}</Text>
 
          <TouchableOpacity style = {styles.statusContainer}>
             <Text style={styles.textButton}>Realizar Pagamento</Text>
             <FontAwesome6 name="basket-shopping" size={16} color="white" />
          </TouchableOpacity>
       </View>
-
    </View>
     
   )
@@ -40,7 +39,7 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'space-between',
       padding: 20,
-      gap: 50
+      gap: 20,
    },
    statusContainer: {
       flexDirection: 'row',

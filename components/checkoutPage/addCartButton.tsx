@@ -7,6 +7,7 @@ import colors from '@/constants/color';
 
 interface AddCartButtonProps {
    price: number
+   newPrice: number
    id: string,
    imgUrl: string,
    productName: string,
@@ -16,23 +17,8 @@ interface AddCartButtonProps {
    amount: number
 }
 
-export default function AddCartButton({price, id, imgUrl, productName, pharmacyName, pontuation, description, amount}: AddCartButtonProps) {
+export default function AddCartButton({newPrice, price, id, imgUrl, productName, pharmacyName, pontuation, description, amount}: AddCartButtonProps) {
    const router = useRouter()
-
-   //const [cart, setCart] = useState([])
-
-   //const handleCheckout = () => {
-   //   const product = {
-   //      id: id,
-   //      imgUrl: imgUrl,
-   //      productName: productName,
-   //      price: price,
-   //      pharmacyName: pharmacyName,
-   //      pontuation: pontuation,
-   //      description: description
-   //   }
-   //   cart.push(product)
-   // }
 
    const handleCheckout = () => {
       router.push({
@@ -48,19 +34,16 @@ export default function AddCartButton({price, id, imgUrl, productName, pharmacyN
          amount: amount
       }
    })}
-
-   
-
   return (
 
    
    <View style={styles.container}>
       
       <View style={styles.containerButton}>
-         <Text style={styles.price}>R${price}</Text>
+         <Text style={styles.price}>R${newPrice.toFixed(2)}</Text>
 
          <TouchableOpacity style = {styles.statusContainer} onPress={handleCheckout}>
-            <Text style={styles.textButton}>Check out</Text>
+            <Text testID='button-checkout' style={styles.textButton}>Check out</Text>
             <FontAwesome6 name="basket-shopping" size={16} color="white" />
          </TouchableOpacity>
       </View>

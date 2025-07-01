@@ -5,6 +5,8 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import colors from '@/constants/color';
 import { useActionSheet } from '@expo/react-native-action-sheet';
+import QuantitySelector from '../QuantitySelector';
+import BuyButton from './buyButton';
 
 interface CardListProps {
    id: string
@@ -24,11 +26,9 @@ export default function CardList({id, imgUrl, pharmacyName, pontuation, productN
    const options = ["Apagar", "Cancelar"];
    const destructiveButtonIndex = 0;
    const cancelButtonIndex = 1;
-
-   const numberPrice = Number(price)
-   const [amout, setAmount] = useState(Number(amount))
-
-   const [newPrice, setNewPrice] = useState(numberPrice)
+   
+   const [amout, setAmount] = useState(amount)
+   const [newPrice, setNewPrice] = useState(price)
 
    const addProduct = () => {
       setAmount(amout + 1)
@@ -43,7 +43,7 @@ export default function CardList({id, imgUrl, pharmacyName, pontuation, productN
    }
 
    useEffect(() => {
-      setNewPrice(Number(amout) * numberPrice)
+      setNewPrice((amout * price))
    }, [amout])
 
    const handleOpen = () => {
@@ -54,44 +54,44 @@ export default function CardList({id, imgUrl, pharmacyName, pontuation, productN
             cancelButtonIndex
          },
          (buttonIndex) => {
-            console.log("Selected: ", buttonIndex);
+            
          }
       )
    }
   
    return (
-    <View style={styles.backGroundContainer}>
-      <Image style={styles.image} source={{uri: imgUrl}} ></Image>
-      <View style ={styles.leftContainer}>
-         <View style = {styles.topContainer}>
-            <Text>{productName}</Text>
-            <TouchableOpacity onPress={handleOpen}>
-               <FontAwesome5 name="trash" size={16} color="#F55A51" />
-            </TouchableOpacity>
-         </View>
-         
-         <Text>R${price}</Text>
+      <View style={styles.container}>
+         <View style={styles.backGroundContainer}>
+            <Image style={styles.image} source={{uri: imgUrl}} ></Image>
+            <View style ={styles.leftContainer}>
+               <View style = {styles.topContainer}>
+                  <Text>{productName}</Text>
+                  <TouchableOpacity onPress={handleOpen}>
+                     <FontAwesome5 name="trash" size={16} color="#F55A51" />
+                  </TouchableOpacity>
+               </View>
+               
+               <Text>R${newPrice}</Text>
 
-         <View style={styles.addItens}>
-            <Text>{pharmacyName}</Text>
-
-            <View style={styles.buttonAddProdutsContainer}>
-               <TouchableOpacity onPress={removeProduct}>
-                  <Ionicons name="remove-circle" size={20} color="#2B2B2B" />
-               </TouchableOpacity>
-               <Text>{amout}</Text>
-               <TouchableOpacity onPress={addProduct}>
-                  <FontAwesome name="plus-square-o" size={20} color="#2B2B2B" />
-               </TouchableOpacity>
+               <View style={styles.addItens}>
+                  <Text>{pharmacyName}</Text>
+                  <QuantitySelector amount={amout} onAdd={addProduct} onRemove={removeProduct}/>
+               </View>
+               
             </View>
+            
          </View>
-         
+         <BuyButton price={newPrice}/>
       </View>
-    </View>
+    
   )
 }
 
 const styles = StyleSheet.create({
+   container: {
+      flex: 1,
+      justifyContent: 'space-between',
+   },
    backGroundContainer: {
       margin: 20,
       backgroundColor: colors.backgroud,

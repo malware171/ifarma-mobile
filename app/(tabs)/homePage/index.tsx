@@ -2,7 +2,7 @@ import { StyleSheet, FlatList } from 'react-native'
 import React from 'react'
 import Product from '@/components/product'
 
-import products from '@/assets/database/products'
+import products from '@/database/products'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 export default function index() {
@@ -16,7 +16,10 @@ export default function index() {
       }}
       data={products}
       renderItem={({ item }) => (
+        
+        
         <Product
+          testID={item.productName}
           id={item.id}
           imgUrl={item.imgUrl}
           pharmacyName={item.pharmacyName}
@@ -24,7 +27,9 @@ export default function index() {
           productName={item.productName}
           pontuation={item.pontuation}
           description={item.description}
+          
         />
+        
       )}
       keyExtractor={(item) => item.id.toString()}
       />

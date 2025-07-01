@@ -8,12 +8,12 @@ import HeaderHomePage from '@/components/headerHomePage';
 
 
 export default function ProductId() {
- const { id, imgUrl, productName, price, pharmacyName, pontuation, description} = useLocalSearchParams();
-
+  const { productId, imgUrl, productName, price, pharmacyName, pontuation, description} = useLocalSearchParams();
+  
   return (
    <View style={styles.container}>
       <CardCheckout
-         id={id as string}
+         id={productId as string}
          imgUrl= {imgUrl as string}
          pharmacyName={pharmacyName as string}
          price={Number(price)}

@@ -5,20 +5,19 @@ import Button from '@/components/authenticationPage/button'
 import Input from '@/components/authenticationPage/input'
 import { Link } from 'expo-router'
 import { useRoute } from '@react-navigation/native'
-import users from '@/assets/database/user'
+import users from '@/database/user'
 
 export default function index() {
    
-  const router = useRoute()
   return (
     <View style = {styles.container}>
       <View style = {styles.backgroundContainer}>
          <LoginTitle title='Login'subtitle='Não tem uma conta ?'>
             <Link href={"/createAccountPage/createAccount"} style = { styles.link}>Criar Conta</Link>
          </LoginTitle>
-         <Input placeholder='username'/>
-         <Input placeholder='password'/>
-         <Button title='Log In' route='(tabs)/homePage'></Button>
+         <Input testID="input-username" placeholder='username'/>
+         <Input testID="input-password" placeholder='password' secureTextEntry/>
+         <Button testId='button-logIn' title='Log In' route='(tabs)/homePage'></Button>
       </View>
     </View>
   )

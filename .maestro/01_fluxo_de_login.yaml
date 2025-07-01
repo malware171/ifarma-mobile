@@ -1,0 +1,15 @@
+appId: com.ifarma.app
+name: Teste de Login
+---
+- openLink: exp://10.0.2.2:8081
+- tapOn:
+    id: input-username
+- inputText: "John Bony"
+- tapOn:
+    id: input-password
+- inputText: "123ddps"
+- tapOn:
+    id: button-logIn
+- assertVisible: "Dipirona"
+- assertVisible: "Rede Raia"
+- assertVisible: "R$13.99"

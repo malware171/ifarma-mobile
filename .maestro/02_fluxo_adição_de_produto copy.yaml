@@ -1,0 +1,17 @@
+appId: com.ifarma.app
+name: Teste de Adicionar ao Carrinho - Alterar Quantidade
+---
+
+- tapOn:
+    id: Dipirona
+- tapOn:
+    id: button-plus
+- tapOn:
+    id: button-plus
+- assertVisible: "Dipirona"
+- assertVisible: "4.8"
+- assertVisible:
+    id: "display-amout"
+    text: "3"
+- assertVisible: "R$41.97"
+
